@@ -1,12 +1,12 @@
 <?php
 
-namespace Vlaswinkel\UnitConverter;
+namespace Vlaswinkel\UnitConverter\Parser;
 
 /**
  * Class InputStream
  *
- * @author  Koen Vlaswinkel <koen@vlaswinkel.info>
- * @package Vlaswinkel\UnitConverter
+ * @author Koen Vlaswinkel <koen@vlaswinkel.info>
+ * @package Vlaswinkel\UnitConverter\Parser
  */
 class InputStream {
     /**

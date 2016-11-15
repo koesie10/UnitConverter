@@ -1,12 +1,12 @@
 <?php
 
-namespace Vlaswinkel\UnitConverter\AST;
+namespace Vlaswinkel\UnitConverter\Parser\AST;
 
 /**
  * Class BinaryOperatorASTNode
  *
  * @author Koen Vlaswinkel <koen@vlaswinkel.info>
- * @package Vlaswinkel\UnitConverter\AST
+ * @package Vlaswinkel\UnitConverter\Parser\AST
  */
 class BinaryOperatorASTNode extends ASTNode {
     const NAME = 'binary_operator';

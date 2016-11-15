@@ -1,14 +1,14 @@
 <?php
 
-namespace Vlaswinkel\UnitConverter;
+namespace Vlaswinkel\UnitConverter\Parser;
 
 use Exception;
 
 /**
  * Class ParseException
  *
- * @author  Koen Vlaswinkel <koen@vlaswinkel.info>
- * @package Vlaswinkel\UnitConverter
+ * @author Koen Vlaswinkel <koen@vlaswinkel.info>
+ * @package Vlaswinkel\UnitConverter\Parser
  */
 class ParseException extends \RuntimeException {
     /**

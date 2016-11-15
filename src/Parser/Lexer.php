@@ -1,12 +1,12 @@
 <?php
 
-namespace Vlaswinkel\UnitConverter;
+namespace Vlaswinkel\UnitConverter\Parser;
 
 /**
  * Class Lexer
  *
- * @author  Koen Vlaswinkel <koen@vlaswinkel.info>
- * @package Vlaswinkel\UnitConverter
+ * @author Koen Vlaswinkel <koen@vlaswinkel.info>
+ * @package Vlaswinkel\UnitConverter\Parser
  */
 class Lexer {
     private $current = null;

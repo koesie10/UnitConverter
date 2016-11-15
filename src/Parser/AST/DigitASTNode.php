@@ -1,7 +1,13 @@
 <?php
 
-namespace Vlaswinkel\UnitConverter\AST;
+namespace Vlaswinkel\UnitConverter\Parser\AST;
 
+/**
+ * Class DigitASTNode
+ *
+ * @author Koen Vlaswinkel <koen@vlaswinkel.info>
+ * @package Vlaswinkel\UnitConverter\Parser\AST
+ */
 class DigitASTNode extends ASTNode {
     const NAME = 'digit';
 

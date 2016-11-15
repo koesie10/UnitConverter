@@ -1,7 +1,6 @@
 <?php
 
-
-namespace Vlaswinkel\UnitConverter;
+namespace Vlaswinkel\UnitConverter\Parser;
 
 use InvalidArgumentException;
 use SplQueue;

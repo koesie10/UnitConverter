@@ -1,12 +1,12 @@
 <?php
 
-namespace Vlaswinkel\UnitConverter\Tests;
+namespace Vlaswinkel\UnitConverter\Parser\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Vlaswinkel\UnitConverter\InputStream;
-use Vlaswinkel\UnitConverter\Lexer;
-use Vlaswinkel\UnitConverter\Operator;
-use Vlaswinkel\UnitConverter\Token;
+use Vlaswinkel\UnitConverter\Parser\InputStream;
+use Vlaswinkel\UnitConverter\Parser\Lexer;
+use Vlaswinkel\UnitConverter\Parser\Operator;
+use Vlaswinkel\UnitConverter\Parser\Token;
 
 /**
  * Class LexerTest

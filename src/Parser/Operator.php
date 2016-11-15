@@ -1,12 +1,12 @@
 <?php
 
-namespace Vlaswinkel\UnitConverter;
+namespace Vlaswinkel\UnitConverter\Parser;
 
 /**
  * Class Operator
  *
  * @author Koen Vlaswinkel <koen@vlaswinkel.info>
- * @package Vlaswinkel\UnitConverter
+ * @package Vlaswinkel\UnitConverter\Parser
  */
 class Operator extends Token {
     /**

@@ -1,14 +1,14 @@
 <?php
 
-namespace Vlaswinkel\UnitConverter\Tests;
+namespace Vlaswinkel\UnitConverter\Parser\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Vlaswinkel\UnitConverter\AST\BinaryOperatorASTNode;
-use Vlaswinkel\UnitConverter\AST\DigitASTNode;
-use Vlaswinkel\UnitConverter\AST\UnitASTNode;
-use Vlaswinkel\UnitConverter\InputStream;
-use Vlaswinkel\UnitConverter\Lexer;
-use Vlaswinkel\UnitConverter\Parser;
+use Vlaswinkel\UnitConverter\Parser\AST\BinaryOperatorASTNode;
+use Vlaswinkel\UnitConverter\Parser\AST\DigitASTNode;
+use Vlaswinkel\UnitConverter\Parser\AST\UnitASTNode;
+use Vlaswinkel\UnitConverter\Parser\InputStream;
+use Vlaswinkel\UnitConverter\Parser\Lexer;
+use Vlaswinkel\UnitConverter\Parser\Parser;
 
 /**
  * Class ParserTest

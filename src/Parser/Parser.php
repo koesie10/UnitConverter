@@ -1,18 +1,18 @@
 <?php
 
-namespace Vlaswinkel\UnitConverter;
+namespace Vlaswinkel\UnitConverter\Parser;
 
 use SplStack;
-use Vlaswinkel\UnitConverter\AST\ASTNode;
-use Vlaswinkel\UnitConverter\AST\BinaryOperatorASTNode;
-use Vlaswinkel\UnitConverter\AST\DigitASTNode;
-use Vlaswinkel\UnitConverter\AST\UnitASTNode;
+use Vlaswinkel\UnitConverter\Parser\AST\ASTNode;
+use Vlaswinkel\UnitConverter\Parser\AST\BinaryOperatorASTNode;
+use Vlaswinkel\UnitConverter\Parser\AST\DigitASTNode;
+use Vlaswinkel\UnitConverter\Parser\AST\UnitASTNode;
 
 /**
  * Class Parser
  *
  * @author Koen Vlaswinkel <koen@vlaswinkel.info>
- * @package Vlaswinkel\UnitConverter
+ * @package Vlaswinkel\UnitConverter\Parser
  */
 class Parser {
     /**

@@ -12,7 +12,7 @@ class DigitASTNode extends ASTNode {
     const NAME = 'digit';
 
     /**
-     * @var int
+     * @var string
      */
     private $value;
 
@@ -21,7 +21,7 @@ class DigitASTNode extends ASTNode {
      *
      * @param int $value
      */
-    public function __construct(int $value) {
+    public function __construct(string $value) {
         $this->value = $value;
     }
 
@@ -32,7 +32,7 @@ class DigitASTNode extends ASTNode {
     /**
      * @return int
      */
-    public function getValue(): int {
+    public function getValue(): string {
         return $this->value;
     }
 }

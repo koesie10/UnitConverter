@@ -60,7 +60,7 @@ class ParserTest extends TestCase {
             new BinaryOperatorASTNode(
                 '^',
                 new UnitASTNode('m'),
-                new DigitASTNode(2)
+                new DigitASTNode('2')
             ),
             $node
         );
@@ -77,7 +77,7 @@ class ParserTest extends TestCase {
                 new BinaryOperatorASTNode(
                     '^',
                     new UnitASTNode('m'),
-                    new DigitASTNode(2)
+                    new DigitASTNode('2')
                 ),
                 new UnitASTNode('s')
             ),
@@ -100,67 +100,22 @@ class ParserTest extends TestCase {
                         new BinaryOperatorASTNode(
                             '^',
                             new UnitASTNode('m'),
-                            new DigitASTNode(2)
+                            new DigitASTNode('2')
                         )
                     ),
                     new BinaryOperatorASTNode(
                         '^',
                         new UnitASTNode('s'),
-                        new DigitASTNode(-3)
+                        new DigitASTNode('-3')
                     )
                 ),
                 new BinaryOperatorASTNode(
                     '^',
                     new UnitASTNode('A'),
-                    new DigitASTNode(-2)
+                    new DigitASTNode('-2')
                 )
             ),
             $node
-        );
-    }
-
-    public function testOptimizedOhm() {
-        $parser = $this->createParser('kg*m^2*s^-3*A^-2');
-
-        $node = $parser->parse();
-
-        $optimized = $parser->optimize($node);
-
-        $this->assertEquals(
-            new BinaryOperatorASTNode(
-                '*',
-                new BinaryOperatorASTNode(
-                    '*',
-                    new BinaryOperatorASTNode(
-                        '*',
-                        new UnitASTNode('kg'),
-                        new BinaryOperatorASTNode(
-                            '^',
-                            new UnitASTNode('m'),
-                            new DigitASTNode(2)
-                        )
-                    ),
-                    new BinaryOperatorASTNode(
-                        '/',
-                        new DigitASTNode(1),
-                        new BinaryOperatorASTNode(
-                            '^',
-                            new UnitASTNode('s'),
-                            new DigitASTNode(3)
-                        )
-                    )
-                ),
-                new BinaryOperatorASTNode(
-                    '/',
-                    new DigitASTNode(1),
-                    new BinaryOperatorASTNode(
-                        '^',
-                        new UnitASTNode('A'),
-                        new DigitASTNode(2)
-                    )
-                )
-            ),
-            $optimized
         );
     }
 

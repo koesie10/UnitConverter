@@ -21,30 +21,30 @@ use Vlaswinkel\UnitConverter\Units\Unit;
  */
 class UnitConverter {
     /**
-     * @var OptimizerInterface
-     */
-    private $optimizer;
-
-    /**
      * @var MathWrapper
      */
     private $math;
 
     /**
-     * UnitConverter constructor.
-     * @param OptimizerInterface|null $optimizer
-     * @param MathWrapper|null $math
+     * @var OptimizerInterface
      */
-    public function __construct($optimizer = null, $math = null) {
-        if (is_null($optimizer)) {
-            $optimizer = new Optimizer();
-        }
-        $this->optimizer = $optimizer;
+    private $optimizer;
 
+    /**
+     * UnitConverter constructor.
+     * @param MathWrapper|null $math
+     * @param OptimizerInterface|null $optimizer
+     */
+    public function __construct($math = null, $optimizer = null) {
         if (is_null($math)) {
             $math = Math::create();
         }
         $this->math = $math;
+
+        if (is_null($optimizer)) {
+            $optimizer = new Optimizer();
+        }
+        $this->optimizer = $optimizer;
     }
 
     /**

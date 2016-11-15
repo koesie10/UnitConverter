@@ -12,5 +12,5 @@ abstract class ASTNode {
     /**
      * @return string
      */
-    public abstract function getName(): string;
+    abstract public function getName(): string;
 }

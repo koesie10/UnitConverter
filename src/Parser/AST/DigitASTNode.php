@@ -19,7 +19,7 @@ class DigitASTNode extends ASTNode {
     /**
      * DigitASTNode constructor.
      *
-     * @param int $value
+     * @param string $value
      */
     public function __construct(string $value) {
         $this->value = $value;

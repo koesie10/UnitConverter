@@ -100,15 +100,11 @@ class UnitConverter {
 
             switch ($node->getOperand()) {
                 case '^':
-                    return [
-                        'type' => $type,
-                        'value' => $this->math->pow($left['value'], $right['value'])
-                    ];
+                    $value = $this->math->pow($left['value'], $right['value']);
+                    break;
                 case '*':
-                    return [
-                        'type' => $type,
-                        'value' => $this->math->mul($left['value'], $right['value'])
-                    ];
+                    $value = $this->math->mul($left['value'], $right['value']);
+                    break;
                 case '/':
                     $value = $this->math->div($left['value'], $right['value']);
 
@@ -116,11 +112,15 @@ class UnitConverter {
                         $type = $value;
                     }
 
-                    return [
-                        'type' => $type,
-                        'value' => $value
-                    ];
+                    break;
+                default:
+                    throw new \InvalidArgumentException('Invalid operand ' . $node->getOperand());
             }
+
+            return [
+                'type' => $type,
+                'value' => $value,
+            ];
         }
 
         throw new \InvalidArgumentException('Unknown node ' . $node->getName());

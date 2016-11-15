@@ -47,7 +47,6 @@ class ShuntingYard {
                     break;
                 default:
                     throw new InvalidArgumentException(sprintf('Invalid token detected: %s', $token));
-                    break;
             }
         }
         while (self::hasOperatorInStack($operatorStack)) {

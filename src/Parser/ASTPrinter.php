@@ -26,9 +26,4 @@ class ASTPrinter {
 
         return $result;
     }
-
-    public static function debugPrint(ASTNode $node): string {
-        var_dump($node, true);
-        return '';
-    }
 }

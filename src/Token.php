@@ -10,18 +10,18 @@ namespace Vlaswinkel\UnitConverter;
  */
 class Token {
     const TYPE_UNIT = 1;
-    const TYPE_ARITHMETIC = 2;
+    const TYPE_OPERATOR = 2;
     const TYPE_DIGIT = 3;
 
     /**
      * @var int
      */
-    private $type;
+    protected $type;
 
     /**
      * @var string
      */
-    private $value;
+    protected $value;
 
     /**
      * Token constructor.
@@ -29,7 +29,7 @@ class Token {
      * @param int $type
      * @param string $value
      */
-    public function __construct(int $type, $value) {
+    public function __construct(int $type, string $value) {
         $this->type  = $type;
         $this->value = $value;
     }

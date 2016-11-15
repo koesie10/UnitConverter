@@ -5,8 +5,6 @@ namespace Vlaswinkel\UnitConverter;
 /**
  * Class InputStream
  *
- * @see     http://lisperator.net/pltut/parser/input-stream
- *
  * @author  Koen Vlaswinkel <koen@vlaswinkel.info>
  * @package Vlaswinkel\UnitConverter
  */

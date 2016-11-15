@@ -11,7 +11,7 @@ use Vlaswinkel\UnitConverter\UnitConverter;
  * @author  Koen Vlaswinkel <koen@vlaswinkel.info>
  * @package Vlaswinkel\UnitConverter\Tests
  */
-class LuaTokenStreamTest extends TestCase {
+class UnitConverterTest extends TestCase {
     public function testSimpleUnitConverter() {
         $obj = new UnitConverter();
 

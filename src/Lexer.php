@@ -16,8 +16,10 @@ class Lexer {
      */
     private $input;
 
-    const arithmeticCharacters = [
-        '*', '/', '^'
+    const operatorsMap = [
+        '*' => ['priority' => 1],
+        '/' => ['priority' => 1],
+        '^' => ['priority' => 2],
     ];
 
     /**
@@ -26,6 +28,17 @@ class Lexer {
      */
     public function __construct(InputStream $input) {
         $this->input = $input;
+    }
+
+    /**
+     * @return Token[]
+     */
+    public function tokenize(): array {
+        $tokens = [];
+        while (!$this->eof()) {
+            array_push($tokens, $this->next());
+        }
+        return $tokens;
     }
 
     /**
@@ -80,10 +93,14 @@ class Lexer {
 
         if ($this->isUnitCharacter($char)) {
             return $this->readUnit();
-        } else if ($this->isArithmeticCharacter($char)) {
-            return $this->readArithmetic();
-        } else if ($this->isDigit($char)) {
-            return $this->readDigit();
+        } else {
+            if ($this->isOperatorCharacter($char)) {
+                return $this->readOperator();
+            } else {
+                if ($this->isDigit($char)) {
+                    return $this->readDigit();
+                }
+            }
         }
 
         $this->input->error('Cannot handle character: ' . $char . ' (ord: ' . ord($char) . ')');
@@ -124,16 +141,16 @@ class Lexer {
      *
      * @return bool
      */
-    protected function isArithmeticCharacter(string $char): bool {
-        return in_array($char, self::arithmeticCharacters);
+    protected function isOperatorCharacter(string $char): bool {
+        return array_key_exists($char, self::operatorsMap);
     }
 
     /**
      * @return Token
      */
-    protected function readArithmetic(): Token {
+    protected function readOperator(): Token {
         $value = $this->input->next();
-        return new Token(Token::TYPE_ARITHMETIC, $value);
+        return new Operator($value, self::operatorsMap[$value]['priority']);
     }
 
     /**
@@ -159,6 +176,6 @@ class Lexer {
      * @return bool
      */
     protected function isWhitespace(string $char): bool {
-        return strpos(" \t\n\r", $char) !== false;
+        return in_array($char, [" ", "\t", "\n", "\r"]);
     }
 }
